@@ -3,37 +3,86 @@ import { Mail, Briefcase } from 'lucide-react';
 
 
 const Contact = () => {
+
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
     const [formData, setFormData] = useState({
+        access_key: "b08b1fde-ce92-46c0-afc9-30de3f2c75b2",
         name: '',
         email: '',
-        projectType: 'ai',
+        projectType: '',
         message: '',
         agreedToPrivacy: false,
-    });
+    })
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
+        
         if (type === 'checkbox') {
             const checkboxTarget = e.target as HTMLInputElement;
-            setFormData(prev => ({ ...prev, [name]: checkboxTarget.checked }));
+            setFormData(prev => ({ ...prev, [name]: checkboxTarget.checked }))
         } else {
-            setFormData(prev => ({ ...prev, [name]: value }));
+            setFormData(prev => ({ ...prev, [name]: value }))
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // This is where you'd typically handle form submission logic
-        console.log('Form Submitted:', formData);
-        alert('Thank you! This form is for demonstration. Check the tip for making it live.');
-    };
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+
+        if(! formData.agreedToPrivacy){
+            alert("Please agree to the privacy policy.")
+            return;
+        }
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+
+            const result = await response.json()
+            if(result.success){
+                alert("Message sent successfully. I'll get back to you soon.")
+
+                // reset form
+                setFormData({
+                    ...formData,
+
+                    name: '',
+                    email: '',
+                    projectType: '',
+                    message: '',
+                    agreedToPrivacy: false,
+                })
+            }
+
+            setIsSubmitting(false)
+        } 
+        catch (error) {
+            console.log("Error in form-submission", error)
+            alert("Network error. Please check you connection.")
+        }
+    }
 
 
     return (
 
 
         <section id="contact" className="py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono overflow-hidden">
+
+            <div className="flex items-center gap-4 mb-16">
+                
+                <h2 className="text-3xl font-bold text-green-500">
+                    <span className="text-gray-500 font-light">04.</span> Write-Me
+                </h2>
+                <div className="h-[1px] bg-green-500/20 flex-1"></div>
+            </div>
 
             <div className="max-w-5xl mx-auto w-full">
 
@@ -51,8 +100,7 @@ const Contact = () => {
                 {/* The Form */}
                 <form onSubmit={handleSubmit} className="max-w-3xl mx-auto w-full border border-white/10 rounded-2xl bg-zinc-900/40 p-8 relative overflow-hidden transition-all duration-300">
 
-                    {/* Subtle central glow*/}
-                    {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-blue-500/10 blur-3xl rounded-full z-0"></div> */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-blue-500/10 blur-3xl rounded-full z-0"></div>
 
                     <div className="relative z-10 space-y-6">
                         <h4 className="text-lg font-bold text-white pb-2 border-b border-white/10">Write-me</h4>
@@ -105,7 +153,8 @@ const Contact = () => {
                                     onChange={handleChange}
                                     className="w-full bg-zinc-900/80 border border-white/20 pl-14 pr-5 py-2 rounded-lg text-white appearance-none focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
                                 >
-                                    <option value="hire">For Hiring Me</option>
+                                    <option value="" disabled hidden className=''></option>
+                                    <option value="For Hiring">For Hiring Me</option>
                                     <option value="frontend">Frontend Development</option>
                                     <option value="backend">Backend Development</option>
                                     <option value="fullStack">Full Stack AI Engineering</option>
@@ -128,7 +177,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 rows={6}
                                 className="w-full bg-zinc-900/80 border border-white/20 px-5 py-2 rounded-lg text-white resize-none focus:outline-none focus:border-blue-500 transition-all"
-                                placeholder="Briefly describe your project or discussion point..."
+                                placeholder="Describe your project or discussion point..."
                             />
                         </div>
 
@@ -151,19 +200,20 @@ const Contact = () => {
                         {/* Submit Button (Green Glow) */}
                         <div className="flex justify-start">
                             <button
+                                disabled={isSubmitting}
                                 type="submit"
                                 className="flex items-center gap-2 text-green-400 bg-transparent border border-green-500/40 
                            hover:bg-green-500/20 px-7 py-2 rounded transition-all duration-300
                            hover:shadow-[0_0_12px_rgba(74,202,128,0.5)] border-green-300 active:scale-95"
                             >
-                                <Mail size={20} /> Submit message
+                                <Mail size={20} /> {isSubmitting? "Sending" : "Send Message"}
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
-    );
-};
+    )
+}
 
 export default Contact;
