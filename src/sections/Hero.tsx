@@ -1,8 +1,11 @@
-import { Mail, FileText, Terminal, MapPin } from 'lucide-react';
+import { Mail, FileText, MapPin } from 'lucide-react';
+import piyush_photo1 from "../assets/piyush_photo1.jpeg";
+import piyush_photo2 from "../assets/piyush_photo2.jpeg";
+import piyush_photo3 from "../assets/piyush_photo3.jpeg"; 
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[80vh] flex items-center justify-between px-6 md:px-60 py-60 bg-black text-white font-mono overflow-hidden">
+        <section id='hero' className="relative min-h-[80vh] flex items-center justify-between px-6 md:px-60 py-60 bg-black text-white font-mono overflow-hidden">
             
             {/* left side */}
             <div className='flex flex-col justify-center'>
@@ -43,27 +46,44 @@ const Hero = () => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-4 mb-12">
-                    <button className="flex items-center gap-2  text-green-400 bg-transparent border border-green-500/50 hover:bg-green-500/20 px-6 py-2 hover:shadow-[0_0_15px_rgba(74,222,128,0.5)] border-green-400 duration-300 rounded transition-all">
+                    <a 
+                        href="#contact" 
+                        className='flex items-center gap-2  text-green-400 bg-transparent border border-green-500/50 hover:bg-green-500/20 px-6 py-2 hover:shadow-[0_0_15px_rgba(74,222,128,0.5)] border-green-400 duration-300 rounded transition-all'
+                    >
                         <Mail size={18} /> Contact
-                    </button>
-                    <button className="flex items-center gap-2 text-blue-400 bg-transparent border border-blue-500/50 hover:bg-blue-500/20 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] border-blue-400 duration-300 px-6 py-2 rounded transition-all">
+                    </a>
+
+                    <a 
+                        href="/Piyush_Shrivastava_resume.pdf"
+                        target='_blank'
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-blue-400 bg-transparent border border-blue-500/50 hover:bg-blue-500/20 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] border-blue-400 duration-300 px-6 py-2 rounded transition-all"
+                    >
                         <FileText size={18} /> Resume
-                    </button>
-                    <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] duration-300 text-white px-6 py-2 rounded transition-all">
-                        <Terminal size={18} /> Launch Terminal
-                    </button>
+                    </a>
+    
                 </div>
             </div>
 
 
             {/* Right Side */}
-            <div className="lg:flex gap-4 pr-20 pb-20">
-                <div className="w-48 h-64 bg-gray-800 border-2 border-white -rotate-6 overflow-hidden rounded">
-                    <img src="" alt="Piyush's Photo" className="object-cover w-full h-full" />
+            <div className="lg:flex pr-15 pb-150">
+                <div className="w-44 h-56 bg-gray-800 border-2 border-white -rotate-12 -translate-y-8 translate-x-2 overflow-hidden rounded
+                    transition-all duration-300 lg:hover:rotate-0 lg:hover:scale-105 lg:hover:-translate-y-12 hover:border-orange-400 hover:drop-shadow-[0_0_4px_rgba(239,68,68,0.7)] cursor-pointer"
+                >
+                    <img src={piyush_photo3} alt="Piyush's Photo" className="object-cover w-full h-full" />
+                </div>
+
+                <div className="w-48 h-64 bg-gray-800 border-2 border-white overflow-hidden rounded z-10
+                    duration-300 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] cursor-pointer"
+                >
+                    <img src={piyush_photo1} alt="Piyush's Photo" className="object-cover w-full h-full" />
                 </div>
                 
-                <div className="w-48 h-64 bg-gray-800 border-2 border-white rotate-6 translate-y-12 overflow-hidden rounded">
-                    <img src="" alt="Piyush's Photo" className="object-cover w-full h-full" />
+                <div className="w-44 h-56 bg-gray-800 border-2 border-white rotate-12 translate-y-8 -translate-x-2 overflow-hidden rounded
+                    transition-all duration-300 lg:hover:rotate-0 lg:hover:scale-105 lg:hover:-translate-y-12 hover:border-blue-400 hover:drop-shadow-[0_0_4px_rgba(96,165,250,0.6)] cursor-pointer"
+                >
+                    <img src={piyush_photo2} alt="Piyush's Photo" className="object-cover w-full h-full" />
                 </div>
             </div>
 
