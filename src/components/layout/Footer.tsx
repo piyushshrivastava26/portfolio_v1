@@ -1,8 +1,15 @@
 import { ArrowUp } from 'lucide-react';
 
+const socialLinks = [
+    { icon: 'fa-brands fa-github', href: 'https://github.com/piyushshrivastava26', color: 'hover:text-white' },
+    { icon: 'fa-brands fa-linkedin', href: 'https://www.linkedin.com/in/piyush-shrivastava-58351825b/', color: 'hover:text-blue-500' },
+    { icon: 'fa-solid fa-envelope', href: 'mailto:piyushshrivastava22ec27@gmail.com', color: 'hover:text-red-400' },
+    { icon: 'fa-brands fa-x-twitter', href: 'https://x.com/man_who_builds', color: 'hover:text-gray-300' }
+]
+
+
 const Footer = () => {
     
-
     const scrollToTop = () => {
         
         window.scrollTo({
@@ -12,72 +19,53 @@ const Footer = () => {
     }
 
     return (
+        <footer className="w-full bg-black text-white font-mono border-t border-white/5 py-10">
+            <div className="max-w-[1100px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
 
-
-        <footer className="py-12 px-6 md:px-20 lg:px-40 bg-black text-white font-mono border-t border-white/5">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-
-                <div className="flex flex-col items-center md:items-start gap-2">
-                    <div className="text-xl font-bold text-white group cursor-default">
-                        &gt;_ piyush.dev
+                {/* center on mobile and left on desktop */}
+                <div className="flex flex-col items-center md:items-start gap-2 order-2 md:order-1">
+                    
+                    <div className="text-xl font-bold text-white cursor-default hover:drop-shadow-[0_0_8px_rgba(34,240,94,0.5)] transition-all">
+                        <span className="mr-1">&gt;_</span>piyush.dev
                     </div>
-
-                    <p className="text-[12px] text-gray-400 uppercase tracking-widest">
-                        © 2026 PIYUSH SHRIVASTAVA.
+                    
+                    <p className="text-[12px] text-gray-400 uppercase tracking-[0.2em]">
+                        © 2026 PIYUSH SHRIVASTAVA
                     </p>
                 </div>
 
-                <div className="flex items-center gap-6">
-                    <a
-                        href="https://github.com/piyushshrivastava26"
-                        target="_blank"
-                        className="text-gray-500 hover:text-green-500 transition-colors hover:scale-105"
-                        title="GitHub"
-                    >
-                        <i className="fa-brands fa-github text-2xl"></i>
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/piyush-shrivastava-58351825b/"
-                        target="_blank"
-                        className="text-gray-500 hover:text-blue-500 transition-colors hover:scale-105"
-                        title="LinkedIn"
-                    >
-                        <i className="fa-brands fa-linkedin text-2xl"></i>
-                    </a>
-
-                    <a
-                        href="mailto:piyushshrivastava22ec27@gmail.com"
-                        className="text-gray-500 hover:text-red-400 transition-colors hover:scale-105"
-                        title="Email"
-                    >
-                        <i className="fa-solid fa-envelope text-2xl group-hover:shadow-[0_0_15px_rgba(248,113,113,0.4)]"></i>
-                    </a>
-
-                    <a
-                        href="https://x.com/man_who_builds"
-                        className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-105"
-                        title="Twitter"
-                    >
-                        <i className="fa-brands fa-x-twitter text-2xl"></i>
-                    </a>
+                <div className="flex items-center gap-8 order-1 md:order-2">
+                    
+                    {socialLinks.map((social, idx) => (
+                        <a
+                            key={idx}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`text-gray-600 ${social.color} transition-all duration-300 hover:scale-125 active:scale-100`}
+                        >
+                            <i className={`${social.icon} text-xl`}></i>
+                        </a>
+                    ))}
                 </div>
 
-                {/* back to top button */}
-                <button
-                    onClick={scrollToTop}
-                    className="group flex items-center gap-2 text-xs text-gray-500 hover:text-white transition-all uppercase tracking-tighter"
-                >
-                    Back to top
-                    <div className="p-2 border border-white/10 rounded-full group-hover:border-white/30 group-hover:-translate-y-1 transition-all">
-                        <ArrowUp size={14} />
-                    </div>
-                </button>
+                {/*  Scroll to Top */}
+                <div className="order-3">
+                    
+                    <button
+                        onClick={scrollToTop}
+                        className="group flex flex-col md:flex-row items-center gap-2 text-[12px] text-gray-500 hover:text-gray-400 transition-all uppercase tracking-widest"
+                    >
+                        <span className="hidden md:inline">Back to top</span>
+                        <div className="p-2 border border-white/10 rounded-full group-hover:border-gray-500/50 group-hover:-translate-y-1 transition-all bg-white/5">
+                            <ArrowUp size={16} />
+                        </div>
+                    </button>
+                </div>
 
             </div>
-
         </footer>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer
