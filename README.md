@@ -4,7 +4,7 @@ Hi there, I'm an Electronics and Communication Engineering Student (Batch of 202
 
 [![Portfolio Preview](./public/preview.png)]()
 
-### Tech Stack
+### Tech Stack -
 
 * **React 19:** Component-driven UI architecture.
 * **Tailwind CSS:** Utility-first styling for a fully responsive, mobile-first layout.
@@ -12,7 +12,7 @@ Hi there, I'm an Electronics and Communication Engineering Student (Batch of 202
 * **Web3Forms:** Serverless email integration for a secure, functional form to write-me.
 * **Lucide React:** Clean, consistent and minimalist icons.
 
-### Key Features
+### Key Features -
 
 * **UI Theme:** A developer-centric UI focusing on readability, dark mode, and high contrast.
 * **Interactive Animations:** Polished scroll-reveal and layout transitions that enhance user engagement without sacrificing speed.
@@ -20,7 +20,7 @@ Hi there, I'm an Electronics and Communication Engineering Student (Batch of 202
 * **Performance Optimized:** Built for fast load times and seamless responsiveness across all device breakpoints.
 
 
-### Author
+### Developed By -
 
 **Piyush Shrivastava**
 * Full Stack Developer
