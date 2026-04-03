@@ -15,17 +15,26 @@ const About = () => {
             </div>
 
             {/* Journey */}
-            <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-24">
+            <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-24">
 
-                <div className="lg:col-span-2 space-y-6 text-gray-400 leading-relaxed text-lg">
+                <div className="lg:col-span-2 space-y-6 text-gray-300 text-justify leading-relaxed text-lg">
                     <p>
-                        Hello! I'm <span className="text-white font-semibold">Piyush Shrivastava</span>, a final-year Electronics and Communication student with a passion for building bridge between <span className="text-blue-400">Software</span> and <span className="text-green-400">Hardware</span>.
+                        Hello! I'm <span className="text-white font-semibold">Piyush Shrivastava</span>, a final-year <span className="text-white font-semibold">Electronics and Communication Engineering</span> student at MJP Rohilkhand University (Class of 2026). My background in hardware logic provides me with a unique perspective on low-level system efficiency, which I leverage to build high-performance web architectures.
                     </p>
+
                     <p>
-                        I specialize in <span className="text-white">Full Stack AI Engineering</span> and <span className="text-white">Embedded Systems</span>. Whether it's architecting a scalable MERN application or writing low-level firmware for IoT devices, I love the challenge of solving complex problems.
+                        As a <span className="text-white">Full-Stack Developer</span>, I build intuitive user interfaces using <span className='text-blue-400 font-semibold'>React</span>, <span className='text-yellow-400 font-semibold'>Javascript</span> and <span className='text-blue-400 font-semibold'>Typescript</span>. On the backend side, I engineer robust, production-ready systems with <span className='text-green-400 font-semibold'>NodeJS</span>, <span className='text-blue-400 font-semibold'>PostgreSQL</span>, and <span className='text-pink-400 font-semibold'>Prisma</span>, ensuring security and data integrity.
                     </p>
+
+                    <p>
+                        I am currently deep-diving into <span className="text-white font-semibold">System Design</span> concepts, focusing on <span className="text-orange-400 font-semibold">horizontal scaling</span>, <span className="text-cyan-400 font-semibold">load balancing</span>, and <span className="text-purple-400 font-semibold">database optimization</span>. My goal is to move beyond simple CRUD operations and design <span className="text-white font-semibold">scalable & distributed systems</span> that can handle real-world traffic and complexity.
+                        I constantly challenge myself on solving technical bottlenecks and turning complex problems into <span className="text-sky-400 font-semibold">scalable & verifiable code</span>.
+                    </p>
+
                 </div>
             </div>
+
+            
 
             {/* Schooling & College Timeline */}
             <div className="max-w-4xl mx-auto w-full mt-16">

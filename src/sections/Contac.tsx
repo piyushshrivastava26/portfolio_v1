@@ -7,7 +7,7 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
 
     const [formData, setFormData] = useState({
-        access_key: "b08b1fde-ce92-46c0-afc9-30de3f2c75b2",
+        access_key: import.meta.env.VITE_WEB3_ACCESS_KEY,
         name: '',
         email: '',
         projectType: '',
