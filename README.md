@@ -2,7 +2,7 @@
 
 Hi there, I'm an Electronics and Communication Engineering Student (Batch of 2026) and Full-Stack Developer with my experince in creating dynamic frontend and building scalable backend architecture. 
 
-[![Portfolio Preview](./public/preview.png)]()
+[![Portfolio Preview](./public/preview.png)](https://portfolio-v1-iota-gray.vercel.app/)
 
 ### Tech Stack -
 
@@ -24,5 +24,5 @@ Hi there, I'm an Electronics and Communication Engineering Student (Batch of 202
 
 **Piyush Shrivastava**
 * Full Stack Developer
-* [Portfolio]()
+* [Portfolio](https://portfolio-v1-iota-gray.vercel.app/)
 * [Linkedin](https://www.linkedin.com/in/piyush-shrivastava-58351825b/)
