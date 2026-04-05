@@ -87,29 +87,29 @@ const Contact = () => {
             <div className="max-w-5xl mx-auto w-full">
 
                 {/* Wireframe Centered Content */}
-                <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+                <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-10 md:mb-16">
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
                         Do You Want To Talk About A Project?
                     </h3>
         
-                    <div className="p-4 bg-zinc-900 border border-white/10 rounded-lg italic text-sm text-green-500/80">
+                    <div hidden className="p-4 bg-zinc-900 border border-white/10 rounded-lg italic text-sm text-green-500/80">
                         "Turning your vision into verifiable code, one commit at a time."
                     </div>
                 </div>
 
                 {/* The Form */}
-                <form onSubmit={handleSubmit} className="max-w-3xl mx-auto w-full border border-white/10 rounded-2xl bg-zinc-900/40 p-8 relative overflow-hidden transition-all duration-300">
+                <form onSubmit={handleSubmit} className="max-w-3xl mx-auto w-full border border-white/10 rounded-2xl bg-zinc-900/40 p-5 md:p-8 relative overflow-hidden transition-all duration-300">
 
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-blue-500/10 blur-3xl rounded-full z-0"></div>
 
                     <div className="relative z-10 space-y-6">
                         <h4 className="text-lg font-bold text-white pb-2 border-b border-white/10">Write-me</h4>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                             {/* name */}
                             <div className="space-y-2">
                                 
-                                <label htmlFor="name" className="text-sm text-gray-400">Full-name <span className="text-blue-500">*</span></label>
+                                <label htmlFor="name" className="text-xs md:text-sm text-gray-400">Full-name <span className="text-blue-500">*</span></label>
                                 <input
                                     type="text"
                                     id="name"
@@ -117,7 +117,7 @@ const Contact = () => {
                                     required
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full bg-zinc-900/80 border border-white/20 px-5 py-2 rounded-lg text-white focus:outline-none focus:border-blue-400 transition-all"
+                                    className="w-full bg-zinc-900/80 border border-white/20 px-4 md:px-5 py-1 md:py-2 rounded-lg text-white focus:outline-none focus:border-blue-400 transition-all"
                                     placeholder="John Doe"
                                 />
                             </div>
@@ -125,7 +125,7 @@ const Contact = () => {
                             {/* Email */}
                             <div className="space-y-2">
                                 
-                                <label htmlFor="email" className="text-sm text-gray-400">Email <span className="text-blue-500">*</span></label>
+                                <label htmlFor="email" className="text-xs md:text-sm text-gray-400">Email <span className="text-blue-500">*</span></label>
                                 <input
                                     type="email"
                                     id="email"
@@ -133,7 +133,7 @@ const Contact = () => {
                                     required
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="w-full bg-zinc-900/80 border border-white/20 px-5 py-2 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-all"
+                                    className="w-full bg-zinc-900/80 border border-white/20 px-4 md:px-5 py-1 md:py-2 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-all"
                                     placeholder="john.doe@example.com"
                                 />
                             </div>
@@ -142,7 +142,7 @@ const Contact = () => {
                         {/* topic dropdown */}
                         <div className="space-y-2 relative">
                             
-                            <label htmlFor="projectType" className="text-sm text-gray-400">Choose your topic <span className="text-blue-500">*</span></label>
+                            <label htmlFor="projectType" className="text-xs md:text-sm text-gray-400">Choose your topic <span className="text-blue-500">*</span></label>
                             <div className="relative">
                                 <Briefcase size={18} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500" />
                                 <select
@@ -151,7 +151,7 @@ const Contact = () => {
                                     required
                                     value={formData.projectType}
                                     onChange={handleChange}
-                                    className="w-full bg-zinc-900/80 border border-white/20 pl-14 pr-5 py-2 rounded-lg text-white appearance-none focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
+                                    className="w-full bg-zinc-900/80 border border-white/20 pl-14 pr-5 py-1 md:py-2 rounded-lg text-white appearance-none focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
                                 >
                                     <option value="" disabled hidden className=''></option>
                                     <option value="For Hiring">For Hiring Me</option>
@@ -168,7 +168,7 @@ const Contact = () => {
 
                         {/* message textarea */}
                         <div className="space-y-2">
-                            <label htmlFor="message" className="text-sm text-gray-400">Your message <span className="text-blue-500">*</span></label>
+                            <label htmlFor="message" className="text-xs md:text-sm text-gray-400">Your message <span className="text-blue-500">*</span></label>
                             <textarea
                                 id="message"
                                 name="message"
@@ -176,7 +176,7 @@ const Contact = () => {
                                 value={formData.message}
                                 onChange={handleChange}
                                 rows={6}
-                                className="w-full bg-zinc-900/80 border border-white/20 px-5 py-2 rounded-lg text-white resize-none focus:outline-none focus:border-blue-500 transition-all"
+                                className="w-full bg-zinc-900/80 border border-white/20 px-4 md:px-5 py-1 md:py-2 rounded-lg text-white resize-none focus:outline-none focus:border-blue-500 transition-all"
                                 placeholder="Describe your project or discussion point..."
                             />
                         </div>
@@ -192,7 +192,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 className="w-5 h-5 bg-zinc-900 border border-white/20 rounded-md accent-blue-500 cursor-pointer focus:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
                             />
-                            <label htmlFor="agreedToPrivacy" className="text-sm text-gray-400 cursor-pointer leading-tight">
+                            <label htmlFor="agreedToPrivacy" className="text-xs md:text-sm text-gray-400 cursor-pointer leading-tight">
                                 I agree with the terms of the <strong className="text-gray-200">Privacy Policy</strong> <span className="text-blue-500">*</span>
                             </label>
                         </div>
@@ -203,7 +203,7 @@ const Contact = () => {
                                 disabled={isSubmitting}
                                 type="submit"
                                 className="flex items-center gap-2 text-green-400 bg-transparent border border-green-500/40 
-                           hover:bg-green-500/20 px-7 py-2 rounded transition-all duration-300
+                           hover:bg-green-500/20 px-6 md:px-7 py-1 md:py-2 rounded transition-all duration-300
                            hover:shadow-[0_0_12px_rgba(74,202,128,0.5)] border-green-300 active:scale-95"
                             >
                                 <Mail size={20} /> {isSubmitting? "Sending" : "Send Message"}

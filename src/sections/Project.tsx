@@ -17,7 +17,7 @@ const projectsData = [
         id: 2,
         title: 'POS Master: Restaurant Management System',
         description: 'A full-stack restaurant POS system built to handle orders, tables, payments and invoice printing exclusively managed by the owner.',
-        techStack: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'JWT Auth', ' Redux Toolkit', 'Tanstack Query', 'Payment Integration'],
+        techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT Auth', ' Redux Toolkit', 'Tanstack Query', 'Payment Integration'],
         image: 'https://github.com/piyushshrivastava26/POS-Master/raw/main/client/public/preview_2.png',
         liveLink: 'https://pos-master-client.onrender.com/',
         githubLink: 'https://github.com/piyushshrivastava26/POS-Master',
@@ -49,7 +49,7 @@ const Projects = () => {
     return (
         <section id="projects" className="py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono">
             
-            <div className="flex items-center gap-4 mb-14">
+            <div className="flex items-center gap-4 mb-8 md:mb-14">
                 <h2 className="text-3xl font-bold text-green-500">
                     <span className="text-gray-500 font-light">03.</span> Project's
                 </h2>
@@ -77,18 +77,18 @@ const Projects = () => {
                             </div>
 
                             {/* Card Content */}
-                            <div className="p-4 flex flex-col flex-1">
+                            <div className="p-2 md:p-4 flex flex-col flex-1">
 
-                                <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors line-clamp-1">
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors line-clamp-1">
                                     {project.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-sm mb-6 line-clamp-2 leading-relaxed flex-1">
+                                <p className="text-gray-400 text-xs md:text-sm mb-2 md:mb-6 line-clamp-2 md:leading-relaxed flex-1">
                                     {project.description}
                                 </p>
 
                                 
-                                <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="flex flex-wrap gap-1 mb-2 md:mb-6">
                                     
                                     {project.techStack.map((tech, index) => (
                                         <span
@@ -101,12 +101,12 @@ const Projects = () => {
                                 </div>
 
                                 {/* Live link & GIthub */}
-                                <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t border-white/10">
+                                <div className="flex items-center justify-between gap-4 mt-auto pt-2 md:pt-4 border-t border-white/10">
                                     <a
                                         href={project.liveLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-sm font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition-colors active:scale-95"
+                                        className="flex items-center gap-2 text-xs md:text-sm font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition-colors active:scale-95"
                                     >
                                         <ExternalLink size={16} /> Go Live 
                                     </a>
@@ -114,7 +114,7 @@ const Projects = () => {
                                         href={project.githubLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-sm font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition-colors active:scale-95"
+                                        className="flex items-center gap-2 text-xs md:text-sm font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition-colors active:scale-95"
                                     >
                                         <GithubIcon size={17}/> Github 
                                     </a>
@@ -128,17 +128,17 @@ const Projects = () => {
             </div>
 
             {/* Explore More on GitHub */}
-            <div className="mt-20 flex flex-col items-center justify-center gap-4">
+            <div className="mt-14 md:mt-20 flex flex-col items-center justify-center gap-2">
 
                 <a
                     href="https://github.com/piyushshrivastava26"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex items-center gap-3 px-8 py-3 bg-zinc-900/50 border border-white/10 rounded-full text-white font-bold transition-all duration-300 hover:border-white/30 hover:bg-zinc-800 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] active:scale-95"
+                    className="group relative flex items-center gap-3 px-5 py-2 bg-zinc-900/50 border border-white/10 rounded-full text-white font-bold transition-all duration-300 hover:border-white/30 hover:bg-zinc-800 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] active:scale-95"
                 >
                     <GithubIcon size={20} />
 
-                    <span className="text-lg tracking-tight">Explore More on GitHub</span>
+                    <span className="text-sm md:text-lg tracking-tight">Explore More on GitHub</span>
 
                     <ArrowUpRight size={18} />
                 </a>
