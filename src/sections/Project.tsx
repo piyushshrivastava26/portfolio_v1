@@ -47,7 +47,7 @@ const Projects = () => {
 
 
     return (
-        <section id="projects" className="py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono">
+        <section id="projects" className="py-10 md:py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono">
             
             <div className="flex items-center gap-4 mb-8 md:mb-14">
                 <h2 className="text-3xl font-bold text-green-500">

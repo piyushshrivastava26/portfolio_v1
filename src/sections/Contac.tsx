@@ -74,7 +74,7 @@ const Contact = () => {
     return (
 
 
-        <section id="contact" className="py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono overflow-hidden">
+        <section id="contact" className="py-10 md:py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono overflow-hidden">
 
             <div className="flex items-center gap-4 mb-16">
                 

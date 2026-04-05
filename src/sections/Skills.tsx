@@ -5,7 +5,7 @@ const Skills = () => {
     
     
     return (
-        <section id="skills" className="py-24 md:py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono">
+        <section id="skills" className="py-10 md:py-24 px-6 md:px-20 lg:px-40 bg-black text-white font-mono">
 
             {/* 02. Tech Arena */}
             <div className="flex items-center gap-4 mb-8 md:mb-14">

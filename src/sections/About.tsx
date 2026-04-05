@@ -47,7 +47,7 @@ const About = () => {
     
     
     return (
-        <section id="about" className="py-24 px-6 md:px-20 lg:px-36 xl:px-40 bg-black text-white font-mono">
+        <section id="about" className="py-10 md:py-24 px-6 md:px-20 lg:px-36 xl:px-40 bg-black text-white font-mono">
 
             <div className="flex items-center gap-4 mb-8 md:mb-14">
                 
@@ -92,7 +92,7 @@ const About = () => {
 
                     {EDUCATION_DATA.map((edu) => (
                         <div key={edu.id} className="relative xl:pl-24 group">
-                            
+
                             <div className={`hidden xl:block absolute left-[3px] lg:left-[23px] top-6 lg:top-10 w-3 lg:w-4 h-3 lg:h-4 rounded-full bg-zinc-800 border-2 border-white/20 z-10 transition-all duration-300 ${edu.color} ${edu.shadow}`} />
 
                             <div className={`p-4 md:p-8 bg-zinc-900/30 border border-white/10 rounded-xl transition-all duration-300 ${edu.border} hover:shadow-[0_0_20px_rgba(255,255,255,0.02)]`}>
